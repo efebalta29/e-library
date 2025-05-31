@@ -8,7 +8,6 @@ const pageInfo = document.getElementById('pageInfo');
 const fontSizeDown = document.getElementById('fontSizeDown');
 const fontSizeUp = document.getElementById('fontSizeUp');
 const toggleTheme = document.getElementById('toggleTheme');
-const addBookmarkBtn = document.getElementById('addBookmark');
 const goBackBtn = document.getElementById('goBack');
 const bookmarkCount = document.querySelector('.cart-count');
 
@@ -86,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fontSizeDown.addEventListener('click', decreaseFontSize);
     fontSizeUp.addEventListener('click', increaseFontSize);
     toggleTheme.addEventListener('click', toggleDarkMode);
-    addBookmarkBtn.addEventListener('click', addCurrentBookToBookmarks);
     goBackBtn.addEventListener('click', goBackToBooks);
     
     // Tema ve font boyutunu local storage'dan yükle
@@ -212,23 +210,6 @@ function toggleDarkMode() {
     
     // Kullanıcı tercihini kaydet
     localStorage.setItem('darkMode', isDarkMode);
-}
-
-// Mevcut kitabı yer imlerine ekle
-function addCurrentBookToBookmarks() {
-    if (!currentBook) return;
-    
-    // Yer imi verisini local storage'da saklama
-    let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    
-    if (!bookmarks.includes(currentBook.id)) {
-        bookmarks.push(currentBook.id);
-        localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-        alert('Kitap yer imlerine eklendi!');
-        updateBookmarkCount();
-    } else {
-        alert('Bu kitap zaten yer imlerinizde bulunuyor!');
-    }
 }
 
 // Yer İmi Sayısını Güncelle
