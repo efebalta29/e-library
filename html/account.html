@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesabım | FEBA-Kütüphane</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/account.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="books.html">Kitaplar</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="account.html" class="cart active">
+                <i class="fas fa-bookmark"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Account Header -->
+    <section class="account-header">
+        <h1>Hesabım</h1>
+        <p>Kütüphane hesabınızı yönetin ve kitap koleksiyonunuzu görüntüleyin.</p>
+    </section>
+
+    <!-- Account Section -->
+    <section class="account-section">
+        <div class="container">
+            <!-- Account Sidebar -->
+            <div class="account-sidebar">
+                <div class="user-profile">
+                    <div class="avatar">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="User Avatar">
+                    </div>
+                    <h2 id="userName">Ahmet Yılmaz</h2>
+                    <p id="userEmail">ahmet@ornek.com</p>
+                </div>
+                <ul class="account-nav">
+                    <li class="active"><a href="#bookmarks"><i class="fas fa-bookmark"></i> Kaydedilenler</a></li>
+                    <li><a href="#profile"><i class="fas fa-user"></i> Profil</a></li>
+                    <li><a href="#settings"><i class="fas fa-cog"></i> Ayarlar</a></li>
+                    <li><a href="#logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Çıkış Yap</a></li>
+                </ul>
+            </div>
+
+            <!-- Account Content -->
+            <div class="account-content">
+                <!-- Bookmarks Tab -->
+                <div id="bookmarks" class="account-tab active">
+                    <h2>Kaydedilen Kitaplar</h2>
+                    <p class="tab-description">Daha sonra okumak üzere kaydettiğiniz kitaplar burada listelenir.</p>
+                    
+                    <div class="bookmarks-container">
+                        <!-- Bookmarks will be dynamically added here -->
+                    </div>
+                    
+                    <div class="no-bookmarks-message">
+                        <i class="fas fa-bookmark"></i>
+                        <h3>Henüz kaydedilmiş kitabınız yok</h3>
+                        <p>Kitaplarımıza göz atın ve beğendiklerinizi kaydedin.</p>
+                        <a href="books.html" class="browse-btn">Kitaplara Göz At</a>
+                    </div>
+                    
+                    <div class="bookmark-actions-container">
+                        <button id="clearBookmarksBtn" class="clear-bookmarks-btn" onclick="clearAllBookmarks()">
+                            <i class="fas fa-trash"></i> Tüm Yer İmlerini Temizle
+                        </button>
+                    </div>
+                </div>    
+
+                <!-- Profile Tab -->
+                <div id="profile" class="account-tab">
+                    <h2>Profil Bilgileri</h2>
+                    <p class="tab-description">Kişisel bilgilerinizi güncelleyin.</p>
+                    
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-group profile-picture-upload">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" alt="Profile Picture">
+                            <button type="button" class="change-picture-btn">Resmi Değiştir</button>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileName">Ad Soyad</label>
+                            <input type="text" id="profileName" value="Ahmet Yılmaz">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileEmail">E-posta</label>
+                            <input type="email" id="profileEmail" value="ahmet@ornek.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileBio">Hakkımda</label>
+                            <textarea id="profileBio" rows="4">Kitap meraklısı ve tutkulu bir okuyucuyum. Bilim kurgu ve fantastik romanları seviyorum.</textarea>
+                        </div>
+                        
+                        <button type="submit" class="save-profile-btn">Değişiklikleri Kaydet</button>
+                    </form>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settings" class="account-tab">
+                    <h2>Hesap Ayarları</h2>
+                    <p class="tab-description">Bildirim ve güvenlik ayarlarınızı yapılandırın.</p>
+                    
+                    <form id="settingsForm">
+                        <div class="settings-section">
+                            <h3>Bildirim Ayarları</h3>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="emailNotifications" checked>
+                                <label for="emailNotifications">E-posta bildirimleri almak istiyorum</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newBookNotifications" checked>
+                                <label for="newBookNotifications">Yeni kitap eklendiğinde bana bildir</label>
+                            </div>
+                            
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="promotionNotifications">
+                                <label for="promotionNotifications">Promosyon ve indirim bildirimleri almak istiyorum</label>
+                            </div>
+                        </div>
+                        
+                        <div class="settings-section">
+                            <h3>Güvenlik Ayarları</h3>
+                            
+                            <div class="form-group">
+                                <label for="currentPassword">Mevcut Şifre</label>
+                                <input type="password" id="currentPassword">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="newPassword">Yeni Şifre</label>
+                                <input type="password" id="newPassword">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="confirmNewPassword">Yeni Şifre Tekrar</label>
+                                <input type="password" id="confirmNewPassword">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="save-settings-btn">Ayarları Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <img src="../assets/feba.png" alt="FEBA Logo" class="footer-logo-img">
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="books.html">Kitaplar</a></li>
+                    <li><a href="#">Kategoriler</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kategoriler</h3>
+                <ul>
+                    <li><a href="#">Kişisel Gelişim</a></li>
+                    <li><a href="#">Romantik</a></li>
+                    <li><a href="#">Bilim Kurgu</a></li>
+                    <li><a href="#">Tarih</a></li>
+                    <li><a href="#">Bilim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ekutuphane.com</p>
+                <p>Telefon: (0212) 123 45 67</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Load book data first, then the application script -->
+    <script src="../mock-data/books.js"></script>
+    <script src="../js/account.js"></script>
+</body>
+</html> 
