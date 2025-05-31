@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Okuma | FEBA-Kütüphane</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/read.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="books.html">Kitaplar</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="account.html" class="cart">
+                <i class="fas fa-bookmark"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="reading-container">
+        <div class="reading-header">
+            <div class="book-info">
+                <h1 id="bookTitle">Kitap Yükleniyor...</h1>
+                <p id="bookAuthor">Yazar: </p>
+            </div>
+            <div class="reading-controls">
+                <button id="fontSizeDown" title="Font Boyutunu Küçült"><i class="fas fa-minus"></i></button>
+                <button id="fontSizeUp" title="Font Boyutunu Büyüt"><i class="fas fa-plus"></i></button>
+                <button id="toggleTheme" title="Tema Değiştir"><i class="fas fa-moon"></i></button>
+                <button id="goBack" title="Geri Dön"><i class="fas fa-arrow-left"></i></button>
+            </div>
+        </div>
+
+        <div class="book-content">
+            <div class="book-pages" id="bookContent">
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Kitap içeriği yükleniyor...</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="reading-footer">
+            <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Önceki Sayfa</button>
+            <span id="pageInfo">Sayfa 1 / ?</span>
+            <button id="nextPage">Sonraki Sayfa <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giriş</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kaydol</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Ad Soyad</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">E-posta</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Şifre</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Şifreyi Onayla</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit">Kaydol</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <p>Tüm okuma ihtiyaçlarınız için dijital kitaplığınız.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="books.html">Kitaplar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> iletisim@febakutuphane.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="../mock-data/books.js"></script>
+    <script src="../mock-data/book-contents.js"></script>
+    <script src="../js/read.js"></script>
+</body>
+</html> 
