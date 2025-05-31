@@ -1,0 +1,239 @@
+:root {
+    --reading-font-size: 16px;
+    --reading-line-height: 1.6;
+    --reading-text-color: #333;
+    --reading-bg-color: #f9f7f2;
+    --reading-container-width: 100%;
+    --reading-header-bg: #fff;
+    --reading-control-color: #444;
+    --reading-control-bg: #f0f0f0;
+    --reading-control-hover: #e0e0e0;
+}
+
+body.dark-mode {
+    --reading-text-color: #e0e0e0;
+    --reading-bg-color: #1a1a1a;
+    --reading-header-bg: #222;
+    --reading-control-color: #ddd;
+    --reading-control-bg: #333;
+    --reading-control-hover: #444;
+}
+
+.reading-container {
+    max-width: var(--reading-container-width);
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--reading-bg-color);
+    min-height: calc(100vh - 200px);
+    transition: background-color 0.3s ease;
+}
+
+.reading-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--reading-header-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-info h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.8rem;
+    color: var(--reading-text-color);
+}
+
+.book-info p {
+    margin: 0;
+    color: var(--reading-text-color);
+    opacity: 0.8;
+}
+
+.reading-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.reading-controls button {
+    background-color: var(--reading-control-bg);
+    color: var(--reading-control-color);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.reading-controls button:hover {
+    background-color: var(--reading-control-hover);
+}
+
+.book-content {
+    background-color: var(--reading-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    min-height: 500px;
+}
+
+.book-pages {
+    color: var(--reading-text-color);
+    font-size: var(--reading-font-size);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.page-content {
+    padding: 0 10px;
+    column-count: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.page-content p {
+    margin-bottom: 1.8em;
+    text-align: justify;
+}
+
+/* Bölüm başlıkları için stil */
+.page-content p strong {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: var(--primary-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.5em;
+}
+
+.reading-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.reading-footer button {
+    background-color: var(--reading-control-bg);
+    color: var(--reading-control-color);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.reading-footer button:hover:not(:disabled) {
+    background-color: var(--reading-control-hover);
+}
+
+.reading-footer button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.reading-footer span {
+    color: var(--reading-text-color);
+    font-size: 0.9rem;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+    color: var(--reading-text-color);
+}
+
+.loading i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 850px) {
+    .reading-container {
+        padding: 15px;
+    }
+
+    .reading-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .reading-controls {
+        margin-top: 15px;
+        align-self: flex-end;
+    }
+
+    .book-content {
+        padding: 20px;
+    }
+    
+    .page-content {
+        padding: 0;
+        max-width: 100%;
+    }
+    
+    .page-content p {
+        text-align: left; /* Mobil görünümde sol hizalama */
+    }
+    
+    .page-content p strong {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 600px) {
+    .reading-container {
+        padding: 10px;
+    }
+
+    .book-info h1 {
+        font-size: 1.4rem;
+    }
+
+    .reading-controls {
+        gap: 5px;
+    }
+
+    .reading-controls button {
+        width: 32px;
+        height: 32px;
+    }
+
+    .book-content {
+        padding: 15px;
+    }
+
+    .reading-footer button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+    }
+} 
