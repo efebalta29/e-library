@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitaplar | FEBA-Kütüphane</title>
+    <link rel="icon" href="../assets/feba.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/books.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="books.html" class="active">Kitaplar</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="account.html" class="cart">
+                <i class="fas fa-bookmark"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Books Header -->
+    <section class="books-header">
+        <h1>Tüm Kitaplar</h1>
+        <p>Zengin kütüphanemizden dilediğiniz kitabı keşfedin ve okuma serüveninize başlayın.</p>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <div class="search-filter">
+                <input type="text" id="bookSearch" placeholder="Kitap adı veya yazar ara...">
+            </div>
+            <div class="category-filter">
+                <label for="categorySelect">Kategori:</label>
+                <select id="categorySelect">
+                    <option value="all">Tümü</option>
+                    <option value="Kişisel Gelişim">Kişisel Gelişim</option>
+                    <option value="Romantik">Romantik</option>
+                    <option value="Bilim">Bilim</option>
+                    <option value="Bilim Kurgu">Bilim Kurgu</option>
+                    <option value="Tarih Kurgu">Tarih Kurgu</option>
+                    <option value="Yemek">Yemek</option>
+                    <option value="Psikoloji">Psikoloji</option>
+                    <option value="Gezi">Gezi</option>
+                    <option value="Gizem">Gizem</option>
+                    <option value="Klasik">Klasik</option>
+                </select>
+            </div>
+            <div class="sort-filter">
+                <label for="sortSelect">Sıralama:</label>
+                <select id="sortSelect">
+                    <option value="title-asc">İsim (A-Z)</option>
+                    <option value="title-desc">İsim (Z-A)</option>
+                    <option value="rating-desc">Puan (Yüksek-Düşük)</option>
+                    <option value="rating-asc">Puan (Düşük-Yüksek)</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Grid -->
+    <section class="books-grid-section">
+        <div class="books-grid">
+            <!-- Books will be dynamically added here -->
+        </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-section">
+        <div class="pagination">
+            <button id="prevPage" disabled><i class="fas fa-chevron-left"></i> Önceki</button>
+            <span id="pageInfo">Sayfa 1 / 1</span>
+            <button id="nextPage"><i class="fas fa-chevron-right"></i> Sonraki</button>
+        </div>
+    </section>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giriş</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kaydol</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Ad Soyad</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">E-posta</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Şifre</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Şifreyi Onayla</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit">Kaydol</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <p>Tüm okuma ihtiyaçlarınız için dijital kitaplığınız.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="books.html">Kitaplar</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> iletisim@febakutuphane.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="../mock-data/books.js"></script>
+    <script src="../js/books.js"></script>
+</body>
+</html> 
