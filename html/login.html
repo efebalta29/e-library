@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap | FEBA-Kütüphane</title>
+    <link rel="icon" href="../assets/feba.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .login-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+            min-height: calc(100vh - 350px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .login-header h2 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .login-header p {
+            color: #666;
+        }
+        
+        .login-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .login-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .login-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .login-form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .login-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .login-footer p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .login-footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .error-message {
+            color: #d9534f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        input.error {
+            border-color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Ana Sayfa</a></li>
+                <li><a href="../html/books.html">Kitaplar</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="../html/register.html">Kayıt Ol</a>
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <div class="login-header">
+                <h2>Giriş Yap</h2>
+                <p>Hesabınıza giriş yaparak kaldığınız yerden devam edin.</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <input type="password" id="loginPassword" required>
+                    <div id="passwordError" class="error-message"></div>
+                </div>
+                
+                <button type="submit">Giriş Yap</button>
+            </form>
+            
+            <div class="login-footer">
+                <p>Henüz bir hesabınız yok mu?</p>
+                <a href="../html/register.html">Hemen Kayıt Olun</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <p>Tüm okuma ihtiyaçlarınız için dijital kitaplığınız.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bağlantılar</h3>
+                <ul>
+                    <li><a href="../html/index.html">Ana Sayfa</a></li>
+                    <li><a href="../html/books.html">Kitaplar</a></li>
+                    <li><a href="#">Kategoriler</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kategoriler</h3>
+                <ul>
+                    <li><a href="#">Kişisel Gelişim</a></li>
+                    <li><a href="#">Romantik</a></li>
+                    <li><a href="#">Bilim Kurgu</a></li>
+                    <li><a href="#">Tarih</a></li>
+                    <li><a href="#">Bilim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ekutuphane.com</p>
+                <p>Telefon: (0212) 123 45 67</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // In a real application, this would be an API call to authenticate the user
+            console.log('Giriş denemesi:', { email, password });
+        
+        });
+    </script>
+
+    <script src="../js/login.js"></script>
+</body>
+</html> 
