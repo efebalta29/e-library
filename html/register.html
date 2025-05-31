@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | FEBA-Kütüphane</title>
+    <link rel="icon" href="../assets/feba.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .register-section {
+            padding: 80px 0;
+            background-color: var(--light-color);
+            min-height: calc(100vh - 350px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .register-container {
+            max-width: 500px;
+            width: 100%;
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .register-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .register-header h2 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .register-header p {
+            color: #666;
+        }
+        
+        .register-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .register-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .register-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .register-form button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        
+        .register-footer {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .register-footer p {
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .register-footer a {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .error-message {
+            color: #d9534f;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        input.error {
+            border-color: #d9534f;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+        
+        .checkbox-group label {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Ana Sayfa</a></li>
+                <li><a href="../html/books.html">Kitaplar</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="../html/login.html">Giriş Yap</a>
+        </div>
+    </header>
+
+    <!-- Register Section -->
+    <section class="register-section">
+        <div class="register-container">
+            <div class="register-header">
+                <h2>Kayıt Ol</h2>
+                <p>Ücretsiz hesap oluşturarak binlerce kitaba erişin.</p>
+            </div>
+            
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <label for="fullName">Ad Soyad</label>
+                    <input type="text" id="fullName" required>
+                    <div id="nameError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-posta</label>
+                    <input type="email" id="registerEmail" required>
+                    <div id="emailError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Şifre</label>
+                    <input type="password" id="registerPassword" required>
+                    <div id="passwordError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Şifre Tekrar</label>
+                    <input type="password" id="confirmPassword" required>
+                    <div id="confirmPasswordError" class="error-message"></div>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="termsAgreement" required>
+                    <label for="termsAgreement">Kullanım koşullarını kabul ediyorum</label>
+                    <div id="termsError" class="error-message"></div>
+                </div>
+                
+                <button type="submit">Kayıt Ol</button>
+            </form>
+            
+            <div class="register-footer">
+                <p>Zaten bir hesabınız var mı?</p>
+                <a href="../html/login.html">Giriş Yapın</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <p>Tüm okuma ihtiyaçlarınız için dijital kitaplığınız.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bağlantılar</h3>
+                <ul>
+                    <li><a href="../html/index.html">Ana Sayfa</a></li>
+                    <li><a href="../html/books.html">Kitaplar</a></li>
+                    <li><a href="#">Kategoriler</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kategoriler</h3>
+                <ul>
+                    <li><a href="#">Kişisel Gelişim</a></li>
+                    <li><a href="#">Romantik</a></li>
+                    <li><a href="#">Bilim Kurgu</a></li>
+                    <li><a href="#">Tarih</a></li>
+                    <li><a href="#">Bilim</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p>Email: info@ekutuphane.com</p>
+                <p>Telefon: (0212) 123 45 67</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const termsAgreement = document.getElementById('termsAgreement');
+            
+            // Basic validation
+            if (!fullName || fullName.trim().length < 3) {
+                alert('Lütfen geçerli bir ad soyad girin');
+                return;
+            }
+            
+            if (!email || !email.includes('@')) {
+                alert('Lütfen geçerli bir e-posta adresi girin');
+                return;
+            }
+            
+            if (!password || password.length < 6) {
+                alert('Şifre en az 6 karakter olmalıdır');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('Şifreler eşleşmiyor!');
+                return;
+            }
+            
+            if (!termsAgreement.checked) {
+                alert('Devam etmek için kullanım koşullarını kabul etmelisiniz');
+                return;
+            }
+            
+            // In a real application, this would be an API call to register the user
+            console.log('Kayıt bilgileri:', { fullName, email, password });
+            
+            // For demonstration, we'll just show a success message and redirect
+            alert('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz.');
+            window.location.href = '../html/login.html';
+        });
+    </script>
+
+    <script src="../js/register.js"></script>
+</body>
+</html> 
