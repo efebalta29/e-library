@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feba-Kütüphane - Dijital Kitaplığınız</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1><img src="../assets/feba.png" alt="FEBA Logo" class="logo-img"> FEBA-Kütüphane</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Ana Sayfa</a></li>
+                <li><a href="books.html">Kitaplar</a></li>
+                <li><a href="#categories">Kategoriler</a></li>
+                <li><a href="#about">Hakkında</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="login.html" id="loginBtn"><i class="fas fa-user"></i> Giriş</a>
+            <a href="register.html" id="signupBtn">Kaydol</a>
+            <a href="account.html" class="cart">
+                <i class="fas fa-bookmark"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Dijital Kütüphanenize Hoş Geldiniz</h2>
+                <p>Çeşitli türlerde binlerce kitap keşfedin</p>
+                <div class="hero-buttons">
+                    <a href="#featured" class="btn primary-btn"><i class="fas fa-book-open"></i> Öne Çıkan Kitaplar</a>
+                    <a href="#new-arrivals" class="btn secondary-btn"><i class="fas fa-star"></i> Yeni Gelenler</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Books Section -->
+        <section id="featured" class="book-section">
+            <h2 class="section-title">Öne Çıkan Kitaplar</h2>
+            <div class="book-container">
+                <!-- Example book to ensure styling works -->
+                <div class="book-card" data-id="1">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Düşüncenin Gücü">
+                        <div class="book-actions">
+                            <button class="add-bookmark" data-id="1"><i class="fas fa-bookmark"></i></button>
+                            <button class="view-details" data-id="1"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Düşüncenin Gücü</h3>
+                        <p class="book-author">Ali Yılmaz</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5</span>
+                        </div>
+                        <p class="book-category">Kişisel Gelişim</p>
+                    </div>
+                </div>
+                <!-- JavaScript will add more books here -->
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="categories-section">
+            <h2 class="section-title">Kategorilere Göz At</h2>
+            <div class="categories-container">
+                <!-- Example categories to ensure styling works -->
+                <div class="category-card" data-category="Kişisel Gelişim">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Kişisel Gelişim</h3>
+                    <p>48 kitap</p>
+                </div>
+                
+                <div class="category-card" data-category="Bilim Kurgu">
+                    <div class="category-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Bilim Kurgu</h3>
+                    <p>36 kitap</p>
+                </div>
+                
+                <div class="category-card" data-category="Romantik">
+                    <div class="category-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Romantik</h3>
+                    <p>42 kitap</p>
+                </div>
+                <!-- JavaScript will add more categories here -->
+            </div>
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section id="new-arrivals" class="book-section">
+            <h2 class="section-title">Yeni Gelenler</h2>
+            <div class="book-container">
+                <!-- Example book to ensure styling works -->
+                <div class="book-card" data-id="5">
+                    <div class="book-cover">
+                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80" alt="Kadim Şehir">
+                        <div class="book-actions">
+                            <button class="add-bookmark" data-id="5"><i class="fas fa-bookmark"></i></button>
+                            <button class="view-details" data-id="5"><i class="fas fa-info-circle"></i></button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Kadim Şehir</h3>
+                        <p class="book-author">Ayşe Kulin</p>
+                        <div class="book-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.2</span>
+                        </div>
+                        <p class="book-category">Tarih Kurgu</p>
+                    </div>
+                </div>
+                <!-- JavaScript will add more books here -->
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2 class="section-title">Kütüphanemiz Hakkında</h2>
+            <p>FEBA-Kütüphane, çeşitli türlerde geniş bir kitap koleksiyonuna erişim sağlayan dijital bir platformdur. Misyonumuz, bilgiyi herkes için, her yerde erişilebilir kılmaktır.</p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Dijital Erişim</h3>
+                    <p>Favori kitaplarınıza herhangi bir cihazdan erişin</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bookmark"></i>
+                    <h3>Yer İmi</h3>
+                    <p>Daha sonra okumak için kitapları kaydedin</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>Dünya Çapında Koleksiyon</h3>
+                    <p>Dünyanın dört bir yanından yazarların kitapları</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Giriş</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">E-posta</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Şifre</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Giriş</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Kaydol</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Ad Soyad</label>
+                    <input type="text" id="signupName" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">E-posta</label>
+                    <input type="email" id="signupEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Şifre</label>
+                    <input type="password" id="signupPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Şifreyi Onayla</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <button type="submit">Kaydol</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>
+                    <span>FEBA-Kütüphane</span>
+                </h3>
+                <p>Tüm okuma ihtiyaçlarınız için dijital kitaplığınız.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="#home">Ana Sayfa</a></li>
+                    <li><a href="books.html">Kitaplar</a></li>
+                    <li><a href="#categories">Kategoriler</a></li>
+                    <li><a href="#about">Hakkında</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>İletişim</h3>
+                <p><i class="fas fa-envelope"></i> iletisim@febakutuphane.com</p>
+                <p><i class="fas fa-phone"></i> +90 555 123 4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEBA-Kütüphane. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- Load book data first, then the application script -->
+    <script src="../mock-data/books.js"></script>
+    <script src="../mock-data/book-contents.js"></script>
+    <script src="../js/script.js"></script>
+    
+    <!-- Add debugging script -->
+    <script>
+        console.log("Index.html scripts loaded");
+        window.addEventListener('load', function() {
+            console.log("Window loaded");
+            if (typeof allBooks !== 'undefined') {
+                console.log("allBooks is defined with", allBooks.length, "items");
+            } else {
+                console.error("allBooks is NOT defined!");
+            }
+        });
+    </script>
+</body>
+</html> 
